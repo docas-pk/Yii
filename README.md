@@ -155,4 +155,27 @@
     $customer = Customer::find()->with('orders')->asArray()->all();
     print_r($customer);
     
-            
+    
+## 类/组件的延迟加载
+   
+    spl_autoload_register('class_name'); // 注册加载函数
+
+## 缓存
+
+    文件缓存
+    
+    $cache = Yii::$app->cache;
+    $dependency = new FileDependency(['fileName'=> 'aaaaa.txt']);
+    // 缓存的key 缓存的值  缓存的时间（秒） 缓存的依赖（文件/数据库库）
+    $cache->add('file_key', 'hello world', 300, $dependency);
+    $cache->delete('file_key');
+    
+## 安全
+   
+    XSS攻击    跨站脚步攻击（Cross Site Scripting）
+    简介：XSS是一种注入脚本式攻击，攻击者利用如提交表单、发布评论等方式将事先准备好的恶意脚本注入到那些良性可信的网站中，当其他用户进入该网站后，脚本就在用户不知情的情况下偷偷地执行了，这样的脚本可能会窃取用户的信息、修改页面内容、或者伪造用户执行其他操作等等，后果不可估量
+    防范：
+    1.使用httpOnly标识后的cookie,javascript 无法获取
+    2.对于用户的输入严格进行html实体转义  htmlspecialchars
+    
+    
