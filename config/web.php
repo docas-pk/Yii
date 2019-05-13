@@ -11,6 +11,14 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'article' => [
+            'class' => 'app\modules\article\Article',
+        ],
+        'comment' => [
+            'class' => 'app\modules\comment\Comment',
+        ],
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -51,6 +59,9 @@ $config = [
             ],
         ],
         */
+        'car' => [
+            'class' => 'app\controllers\Car'
+        ],
     ],
     'params' => $params,
 ];
