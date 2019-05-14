@@ -26,3 +26,5 @@
     检测程序执行时间
     Yii::beginProfile("pay_time_log_start");
     Yii::endProfile("pay_time_log_end");
+    
+## gii
